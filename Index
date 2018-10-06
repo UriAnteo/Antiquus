@@ -1,0 +1,737 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style>
+		table {
+			width:1280px;
+			font-family: arial, tahoma, sans-serif;
+			font-size: 10pt;
+			border-collapse: collapse;
+			font-weight: 100;
+		}
+
+		td, th {
+			border: 1px solid black;
+			text-align: left;
+			padding: 8px;
+			word-break: break-word;
+		}
+
+		tr:nth-child(even) {
+			background-color: #DBDBDB;
+		}
+		
+		tr.unimportant {
+			opacity: 0.5;
+			font-size: 8pt;
+		}
+		
+		.hidden {
+			display: none;
+		}
+
+		td.mini {
+			font-size: 8pt;
+		}
+
+		p.mini {
+			font-family: arial, tahoma, sans-serif;
+			font-size: 8pt;
+		}
+		
+		p {
+			font-family: arial, tahoma, sans-serif;
+		}
+		
+		
+		p.mini2 {
+			font-family: arial, tahoma, sans-serif;
+			font-size: 5pt;
+		}
+		
+		p.mini3 {
+			font-family: arial, tahoma, sans-serif;
+			font-size: 5pt;
+			color: gray;
+		}
+		
+		.no-bottom-margin {
+			margin-bottom: 0px;
+		}
+		
+		.no-top-margin {
+			margin-top: 0px;
+		}
+				
+		p.kindasmall {
+			font-family: arial, tahoma, sans-serif;
+			font-size: 10pt;
+			margin: 5px 0px 5px 0px;
+		}
+
+		h1, h2, h3 {
+			font-family: arial, tahoma, sans-serif;
+		}
+
+		summary.bigsum {
+			font-family: arial, tahoma, sans-serif;
+			font-size: 15pt;
+            font-weight: 500;
+			cursor:pointer;
+		}		
+
+		summary.bigsum_disabled {
+			font-family: arial, tahoma, sans-serif;
+			font-size: 15pt;
+			color: #9E9E9E;
+		}
+		
+		summary.mediumsum {
+			font-family: arial, tahoma, sans-serif;
+			font-size: 12pt;
+			cursor:pointer;
+		}		
+
+		summary.mediumsum_disabled {
+			font-family: arial, tahoma, sans-serif;
+			font-size: 12pt;
+			color: #9E9E9E;
+		}
+		
+		
+		summary.smallsum {
+			font-family: arial, tahoma, sans-serif;
+			font-size: 10pt;
+			cursor:pointer;
+		}
+		
+		summary.smallsum_disabled {
+			font-family: arial, tahoma, sans-serif;
+			font-size: 10pt;
+			color: #9E9E9E;
+		}
+		
+		.indent10 {
+			margin-left: 10px;
+		}
+		
+		.indent15 {
+			margin-left: 15px;
+		}
+		
+		.indent20 {
+			margin-left: 20px;
+		}
+		
+		.indent30 {
+			margin-left: 30px;
+		}
+		
+		.smallinput {
+			font-family: arial, tahoma, sans-serif;
+			font-size: 10pt;
+		}
+		
+		p.scriptnotify {
+			font-family: arial, tahoma, sans-serif;
+			color: red;
+			font-size: 12pt;
+		}
+		
+		p.scriptnotifysmall {
+			font-family: arial, tahoma, sans-serif;
+			color: red;
+			font-size: 9pt;
+		}
+		
+		p.scriptnotifysmaller {
+			font-family: arial, tahoma, sans-serif;
+			color: red;
+			font-size: 5pt;
+		}
+		
+		div.simplebox {
+			font-family: arial, tahoma, sans-serif;
+			font-size: 10pt;
+			padding: 5px;
+			margin: 2px;
+			border-left-style: dotted;
+		}
+		
+		ul {
+			padding-left:20px;
+		}
+		
+		div.footer {
+		   position: fixed;
+		   bottom: 20px;
+		   height: 20px;
+		   width: 20px;
+		   border-style: none;
+		}
+		
+		div.footer1 {
+		   right: 20px;
+		}
+		
+		div.footer2 {
+		   left: 20px;
+		   visibility: hidden;
+		}
+		
+		div.footer:hover {
+			border-style: dotted;
+			border-color: #F2F2F2;
+		}
+		
+		.selected {
+			background-color: #C4F0FF;
+		}
+		
+		tr.selected:nth-child(even) {
+			background-color: #C4F0FF;
+		}
+		
+		.noscripthidden {
+			display: none;
+		}
+		
+		
+		span.quote {
+			position:absolute;
+			float:right;
+			top:5px;
+			right:5px;
+			font-family: arial, tahoma, sans-serif;
+			font-style: italic;
+			font-size: 11pt;
+			opacity:0.4;
+		}
+		
+		img.homeButton {
+			position:absolute;
+			float:left;
+			top:0px;
+			left:5px;
+			height:20px;
+		}
+		
+		p.about {
+			position:absolute;
+			float:left;
+			top:-15px;
+			left:85px;
+			height:0px;
+			
+		}
+		
+		a.about {
+			color: green;
+		}
+
+		/* IE 6 */
+		* html #footer {
+		   position:absolute;
+		   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+		}
+		
+		#buildMsg {
+			font-family: arial, tahoma, sans-serif;
+			color: black;
+			font-size: 8pt;
+			margin: 0;
+			border-bottom: 1px dotted;
+			width: 137px;
+		}
+		
+		.imageWrapper {
+			position: relative;
+			height: 64px;
+			width: 64px;
+		}
+		.overlayImage {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		
+		.selectable.filtered {
+			display: none;
+		}
+		
+		.displayFilterHit {
+			color: green;
+		}
+		
+		.onlyFirefox {
+			display: none;
+		}
+		
+		.combinatorAdded::before {
+			padding:3px;
+			content:"+";
+			color:green;
+			font-weight: bold;
+		}
+		
+		.combinatorRemoved::before {
+			padding:3px;
+			content:"-";
+			color:red;
+			font-weight: bold;
+		}
+		
+		.mutatorFirstColDiv {
+			display:flex;
+			flex-direction:column;
+			align-items: center;
+			text-align: center;
+		}
+		
+		.mutatorIcon {
+			margin-right: 5px;
+			height: 64px;
+			width: 64px;
+		}
+		
+	</style>
+	
+	
+</head>
+<body>
+<h1 class="no-bottom-margin">EVE Online: Antiquus
+<p class="kindasmall">Click the categories below to expand them:</p>
+
+<details id="newitems">
+	<summary class="selectParent bigsum">Items</summary>
+	
+	<table>
+	  <tbody><tr>
+		<th>Icon</th>
+		<th style="
+    width: 110px;
+">TypeID &amp; Name</th>
+		<th>Description</th>
+		<th style="
+    width: 350px;
+">Traits</th>
+		<th style="
+    width: 300px;
+">Attributes</th>
+	  </tr>
+<tr class="selectable" id="slf1">
+		<td style="
+    width: 64px;
+"><img src="https://i.imgur.com/EOtvqHM.png" style="max-width:64px;max-height:64px;"></td>
+		<td style="">49??? - <b>Nymf</b></td>
+		<td style="max-width: 500px;">Sleeper Frigate</td>
+		<td style="max-width: 250px;width: 250px;">
+<b class="bonusheader">Sleeper Technology bonuses (per skill level):</b>
+	<ul style="
+    margin-top: 8px;
+    margin-bottom: 8px;
+"><li><span class="bonusunit">25%</span> bonus to the benefits of overheating <b>Armor Repairers</b> </li></ul>
+<b class="bonusheader">Precursor Frigate bonuses (per skill level):</b>
+    <ul style="
+    margin-top: 8px;
+    margin-bottom: 8px;
+"><li><span class="bonusunit">4%</span> bonus to all <b>armor resistances</b></li></ul>
+<b class="bonusheader">Role Bonus:</b><ul style="margin-bottom: 0px;margin-top: 8px;">
+    <li><span class="bonusunit">20%</span> bonus to <b>Small Energy Turret</b> optimal range</li>
+    <li><span class="bonusunit">20%</span> bonus to <b>Light Missile</b> explosion velocity</li>
+    <li><span class="bonusunit">50%</span> reduction in module damage from overheating</li></ul></td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="slc1">
+		<td><img src="https://i.imgur.com/TSRuYfP.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Koukol</b></td>
+		<td style="max-width: 500px;">Sleeper Cruiser</td>
+		<td style="max-width: 250px;width: 250px;">
+<b class="bonusheader">Sleeper Technology bonuses (per skill level):</b>
+	<ul style="
+    margin-top: 8px;
+    margin-bottom: 8px;
+"><li><span class="bonusunit">25%</span> bonus to the benefits of overheating <b>Armor Repairers</b></li></ul>
+<b class="bonusheader">Precursor Frigate bonuses (per skill level):</b>
+    <ul style="
+    margin-top: 8px;
+    margin-bottom: 8px;
+"><li><span class="bonusunit">4%</span> bonus to all <b>armor resistances</b></li></ul>
+<b class="bonusheader">Role Bonus:</b><ul style="margin-bottom: 0px;margin-top: 8px;">
+    <li><span class="bonusunit">20%</span> bonus to <b>Medium Energy Turret</b> optimal range</li>
+    <li><span class="bonusunit">20%</span> bonus to <b>Heavy Missile</b> explosion velocity</li>
+    <li><span class="bonusunit">50%</span> reduction in module damage from overheating</li></ul></td>
+	<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="slb1">
+		<td><img src="https://i.imgur.com/VxB0i5s.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Skoros</b></td>
+		<td style="max-width: 500px;">Sleeper Battleship
+			</td>
+		<td style="max-width: 250px;width: 250px;">
+<b class="bonusheader">Sleeper Technology bonuses (per skill level):</b>
+	<ul style="
+    margin-top: 8px;
+    margin-bottom: 8px;
+"><li><span class="bonusunit">25%</span> bonus to the benefits of overheating <b>Armor Repairers</b></li></ul>
+<b class="bonusheader">Precursor Frigate bonuses (per skill level):</b>
+    <ul style="
+    margin-top: 8px;
+    margin-bottom: 8px;
+"><li><span class="bonusunit">4%</span> bonus to all <b>armor resistances</b></li></ul>
+<b class="bonusheader">Role Bonus:</b><ul style="margin-bottom: 0px;margin-top: 8px;">
+    <li><span class="bonusunit">20%</span> bonus to <b>Large Energy Turret</b> optimal range</li>
+    <li><span class="bonusunit">20%</span> bonus to <b>Cruise Missile</b> explosion velocity</li>
+    <li><span class="bonusunit">50%</span> reduction in module damage from overheating</li></ul></td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary><b>Item Damage:</b> 0.0<br><b>Mass:</b> 63000000.0<br><b>Structure Hitpoints:</b> 8000.0<br><b>Powergrid Output:</b> 17000.0<br><b>Low Slots:</b> 8.0<br><b>Medium Slots:</b> 4.0<br><b>High Slots:</b> 5.0<br><b>Power Load:</b> 0.0<br><b>powerToSpeed:</b> 1.0<br><b>warpFactor:</b> 0.0<br><b>Maximum Velocity:</b> 113.0<br><b>Capacity:</b> 933.0<br><b>CPU Output:</b> 625.0<br><b>CPU Load:</b> 0.0<br><b>Capacitor Recharge time:</b> 1000000.0<br><b>Inertia Modifier:</b> 0.163<br><b>Maximum Targeting Range:</b> 87000.0<br><b>Targeting Speed:</b> 7500.0<br><b>Launcher Hardpoints:</b> 0.0<br><b>Turret Hardpoints:</b> 1.0<br><b>Structure Kinetic Damage Resistance:</b> 0.67<br><b>Structure Thermal Damage Resistance:</b> 0.67<br><b>Structure Explosive Damage Resistance:</b> 0.67<br><b>Structure EM Damage Resistance:</b> 0.67<br><b>mainColor:</b> 16777215.0<br><b>maxPassengers:</b> 999.0<br><b>uniformity:</b> 1.0<br><b>warpCapacitorNeed:</b> 1.38e-07<br><b>radius:</b> 550.0<br><b>Primary Skill required:</b> 47869.0<br><b>Maximum Locked Targets:</b> 7.0<br><b>raceID:</b> 135<br><b>RADAR Sensor Strength:</b> 28.0<br><b>Ladar Sensor Strength:</b> 0.0<br><b>Magnetometric Sensor Strength:</b> 0.0<br><b>Gravimetric Sensor Strength:</b> 0.0<br><b>propulsionGraphicID:</b> 394.0<br><b>gfxBoosterID:</b> 394.0<br><b>Shield Capacity:</b> 3500.0<br><b>Armor Hitpoints:</b> 10500.0<br><b>Armor EM Damage Resistance:</b> 0.5<br><b>Armor Explosive Damage Resistance:</b> 0.8<br><b>Armor Kinetic Damage Resistance:</b> 0.75<br><b>Armor Thermal Damage Resistance:</b> 0.65<br><b>Shield EM Damage Resistance:</b> 1.0<br><b>Shield Explosive Damage Resistance:</b> 0.5<br><b>Shield Kinetic Damage Resistance:</b> 0.6<br><b>Shield Thermal Damage Resistance:</b> 0.8<br><b>requiredSkill1Level:</b> 1.0<br><b>Drone Capacity:</b> 250.0<br> None <b>Tech Level:</b>1<br><b>Shield recharge time:</b> 2500000.0<br><b>Capacitor Capacity:</b> 6600.0<br><b>Shield Uniformity:</b> 0.75<br><b>armorUniformity:</b> 0.75<br><b>structureUniformity:</b> 1.0<br><b>Signature Radius:</b> 370.0<br><b>Scan Resolution:</b> 100.0<br><b>Warp Speed Multiplier:</b> 2.0<br><b>Meta Level:</b> 0.0<br><b>maxDirectionalVelocity:</b> 1000.0<br><b>minTargetVelDmgMultiplier:</b> 0.5<br><b>Calibration:</b> 400.0<br><b>Rig Slots:</b> 3.0<br><b>Upgrade Hardpoints:</b> 3.0<br><b>heatCapacityHi:</b> 100.0<br><b>heatDissipationRate:</b> 0.01<br><b>heatDissipationRateHi:</b> 0.01<br><b>heatDissipationRateLow:</b> 0.01<br><b>heatCapacityMed:</b> 100.0<br><b>heatCapacityLow:</b> 100.0<br><b>heatGenerationMultiplier:</b> 0.5<br><b>Heat Attenuation:</b> 0.82<br><b>heatAttenuationMed:</b> 0.71<br><b>heatAttenuationMed:</b> 0.79<br><b>Drone Bandwidth:</b> 100.0<br><b>Ship Warp Speed:</b> 1.0<br><b>factionID:</b> 500026<br><b>Rig Size:</b> 3.0<br><b>fwLpKill:</b> 500.0<br><b>Color Scheme:</b> 11313.0<br><b>published:</b>True<b>shipBonusRole1:</b> 100.0<br><b>shipBonusRole2:</b> -50.0<br><b>Special Ability Bonus:</b> -5.0<br><b>Special Ability Bonus:</b> 5.0<br><b>basePrice:</b> 85000000.0<br><b>certificateTemplate:</b> 236<br><b>descriptionID:</b> 535281<br><b>marketGroupID:</b> 2430<br><b>wreckTypeID:</b> 47977<br></details></td>
+</tr>
+<tr class="selectable" id="tmf1">
+		<td style=""><img src="https://i.imgur.com/as84rTB.png" style="max-width:64px;max-height:64px;"></td>
+		<td style="">49??? - <b>Hosun</b></td>
+		<td style="max-width: 500px;">Takmahl Frigate</td>
+		<td style="max-width: 250px;width: 250px;">Precursor Frigate</td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="tmc1">
+		<td><img src="https://i.imgur.com/as84rTB.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Siamac</b></td>
+		<td style="max-width: 500px;">Takmahl Cruiser</td>
+		<td style="max-width: 250px;">Precursor Cruiser</td>
+	<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="tmb1">
+		<td><img src="https://i.imgur.com/as84rTB.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Keimar</b></td>
+		<td style="max-width: 500px;">Takmahl Battleship</td>
+		<td style="max-width: 250px;">Precursor Battleship</td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="taf1">
+		<td style=""><img src="https://i.imgur.com/WE0RzZr.png" style="max-width:64px;max-height:64px;"></td>
+		<td style="">49??? - <b>Xolotl</b></td>
+		<td style="max-width: 500px;">Talocan Frigate</td>
+		<td style="max-width: 250px;width: 250px;">Precursor Frigate</td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="tac1">
+		<td><img src="https://i.imgur.com/FQurAxH.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Ocelotl</b></td>
+		<td style="max-width: 500px;">Talocan Cruiser</td>
+		<td style="max-width: 250px;">Precursor Cruiser</td>
+	<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="tab1">
+		<td><img src="https://i.imgur.com/JJSsm18.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Cipactl</b></td>
+		<td style="max-width: 500px;">Talocan Battleship</td>
+		<td style="max-width: 250px;">Precursor Battleship</td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="yjf1">
+		<td style=""><img src="https://i.imgur.com/as84rTB.png" style="max-width:64px;max-height:64px;"></td>
+		<td style="">49??? - <b>Amida</b></td>
+		<td style="max-width: 500px;">Yan Jung Frigate</td>
+		<td style="max-width: 250px;width: 250px;">Precursor Frigate</td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="yjc1">
+		<td><img src="https://i.imgur.com/as84rTB.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Guanyin</b></td>
+		<td style="max-width: 500px;">Yan Jung Cruiser</td>
+		<td style="max-width: 250px;">Precursor Cruiser</td>
+	<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="yjb1">
+		<td><img src="https://i.imgur.com/as84rTB.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Mahast</b></td>
+		<td style="max-width: 500px;">Yan Jung Battleship</td>
+		<td style="max-width: 250px;">Precursor Battleship</td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="jf1">
+		<td style=""><img src="https://i.imgur.com/fb4cZfe.png" style="max-width:64px;max-height:64px;"></td>
+		<td style="">49??? - <b>Charyb</b></td>
+		<td style="max-width: 500px;">Following the massive influx of Capsuleers into the Abyssal frontlines in YC120, the Charyb emerged as a resource-efficient addition to the Drifter fleet. Hard-hitting and stunningly mobile, the vessel was rapidly incorporated into Tyrannos operations on all fronts.
+<br><br>
+    The Charyb is capable of fitting both <b>Light Warp Lance</b> and <b>Light Hyperwarp Diffuser</b> modules. Additionally, the incorporation of specialized Sleeper cryopreservatory and thermoregulatory technology into the hull drastically increases the overload potential and heat damage repair rate of fitted weapons and microwarpdrives, and allows in-flight repairs to be performed on burned-out modules.</td>
+		<td style="max-width: 250px;width: 250px;">
+<b class="bonusheader">Precursor Frigate bonuses (per skill level):</b><ul style="margin-top: 8px; margin-bottom: 8px;">
+    <li><span class="bonusunit">50%</span> bonus to the benefits of overheating <b>Warp Lances</b> and <b>Microwarpdrives</b></li>
+    <li><span class="bonusunit">50%</span> bonus to damaged module repair amount per second</li></ul>
+<b class="bonusheader">Role Bonus:</b><ul style="margin-bottom: 0px;margin-top: 8px;">
+    <li><span class="bonusunit">Can fit <b>Light Warp Lance</b> and <b>Light Hyperwarp Diffuser</b> modules</span></li>
+    <li><span class="bonusunit">Can repair heat damage to modules that have taken 100% damage</span></li></ul></td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="jc1">
+		<td><img src="https://i.imgur.com/T1v2IvY.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Scylla</b></td>
+		<td style="max-width: 500px;">Emerging from Anoikis in YC120, the Scylla rapidly cemented its position as a uniquely agile fast-attack cruiser, aggressively responding to encroachment on the Drifters’ claims in known space and supporting its larger counterpart in Tyrannos incursions against the Triglavian Collective in the depths of Abyssal Deadspace.
+	<br>
+    <br>
+    The Scylla is capable of fitting both <b>Heavy Warp Lance</b> and <b>Heavy Hyperwarp Diffuser</b> modules. Additionally, the incorporation of specialized Sleeper cryopreservatory and thermoregulatory technology into the hull drastically increases the overload potential and heat damage repair rate of fitted weapons and microwarpdrives, and allows in-flight repairs to be performed on burned-out modules.
+</td>
+		<td style="max-width: 250px;width: 250px;">
+<b class="bonusheader">Precursor Cruiser bonuses (per skill level):</b><ul style="margin-top: 8px; margin-bottom: 8px;">
+    <li><span class="bonusunit">50%</span> bonus to the benefits of overheating <b>Warp Lances</b> and <b>Microwarpdrives</b></li>
+    <li><span class="bonusunit">50%</span> bonus to damaged module repair amount per second</li></ul>
+<b class="bonusheader">Role Bonus:</b><ul style="margin-bottom: 0px;margin-top: 8px;">
+    <li><span class="bonusunit">Can fit <b>Heavy Warp Lance</b> and <b>Heavy Hyperwarp Diffuser</b> modules</span></li>
+    <li><span class="bonusunit">Can repair heat damage to modules that have taken 100% damage</span></li></ul></td>
+	<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="jb1">
+		<td><img src="https://i.imgur.com/yMuQ4YP.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Argo</b></td>
+		<td style="max-width: 500px;">First encountered in early YC117, the Argo quickly established itself as the Drifters’ emblematic mainline battleship. The vessel initially operated strategically, guarding and harvesting materials from the derelict Jove Observatories spread across the cluster, and demonstrated its full combat potential during the Throne Worlds incursions following the assassination of Empress Jamyl I.
+		<br>
+   		<br>
+    The Argo is capable of fitting both <b>Fullborne Warp Lance</b> and <b>Prime Hyperwarp Diffuser</b> modules. Additionally, the incorporation of specialized Sleeper cryopreservatory and thermoregulatory technology into the hull drastically increases the overload potential and heat damage repair rate of fitted weapons and microwarpdrives, and allows in-flight repairs to be performed on burned-out modules.
+</td>
+		<td style="max-width: 250px;width: 250px;">
+<b class="bonusheader">Precursor Battleship bonuses (per skill level):</b><ul style="margin-top: 8px; margin-bottom: 8px;">
+    <li><span class="bonusunit">50%</span> bonus to the benefits of overheating <b>Warp Lances</b> and <b>Microwarpdrives</b></li>
+    <li><span class="bonusunit">50%</span> bonus to damaged module repair amount per second</li></ul>
+<b class="bonusheader">Role Bonus:</b><ul style="margin-bottom: 0px;margin-top: 8px;">
+    <li><span class="bonusunit">Can fit <b>Fullborne Warp Lance</b> and <b>Prime Hyperwarp Diffuser</b> modules</span></li>
+    <li><span class="bonusunit">Can repair heat damage to modules that have taken 100% damage</span></li></ul></td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="jf2">
+		<td style=""><img src="https://vignette.wikia.nocookie.net/eve/images/a/a4/Wraith.jpg" style="max-width:64px;max-height:64px;"></td>
+		<td style="">49??? - <b>Wraith</b></td>
+		<td style="max-width: 500px;">Jove Frigate</td>
+		<td style="max-width: 250px;width: 250px;">
+<b class="bonusheader">Jove Frigate bonuses (per skill level):</b>
+	<ul style="
+    margin-top: 8px;
+    margin-bottom: 8px;
+"><li><span class="bonusunit">200%</span> bonus to ship max velocity when using <b>Cloaking Devices</b> </li></ul>
+<b class="bonusheader">Precursor Frigate bonuses (per skill level):</b>
+    <ul style="margin-top: 8px; margin-bottom: 8px;">
+        <li><span class="bonusunit">20%</span> bonus to wormhole generation range</li></ul>
+<b class="bonusheader">Role Bonus:</b><ul style="margin-bottom: 0px;margin-top: 8px;">
+    <li><span class="bonusunit">100%</span> reduction to <b>Cloaking Device</b> CPU requirement</li>
+    <li><span class="bonusunit">+10</span> to <b>Relic</b> and <b>Data Analyzer</b> virus strength</li>
+    <li><span class="bonusunit">100%</span> reduction to <b>Cloaking Device</b> CPU requirement</li>
+    <li><span class="bonusunit">Pilots of this ship will not appear in local channel lists</span></li>
+    <li><span class="bonusunit">This ship is capable of generating navigable wormholes</span></li></ul></td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="jc2">
+		<td><img src="https://vignette.wikia.nocookie.net/eve/images/f/f8/Phantom.jpg" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Phantom</b></td>
+		<td style="max-width: 500px;">Jove Cruiser</td>
+		<td style="max-width: 250px;width: 250px;">
+<b class="bonusheader">Jove Cruiser bonuses (per skill level):</b>
+	<ul style="
+    margin-top: 8px;
+    margin-bottom: 8px;
+"><li><span class="bonusunit">200%</span> bonus to ship max velocity when using <b>Cloaking Devices</b> </li></ul>
+<b class="bonusheader">Precursor Frigate bonuses (per skill level):</b>
+    <ul style="margin-top: 8px; margin-bottom: 8px;">
+        <li><span class="bonusunit">20%</span> bonus to wormhole generation range</li></ul>
+<b class="bonusheader">Role Bonus:</b><ul style="margin-bottom: 0px;margin-top: 8px;">
+    <li><span class="bonusunit">50%</span> bonus to <b>Medium Energy Turret</b> damage</li>
+    <li><span class="bonusunit">+10</span> to <b>Relic</b> and <b>Data Analyzer</b> virus strength</li>
+    <li><span class="bonusunit">100%</span> reduction to <b>Cloaking Device</b> CPU requirement</li>
+    <li><span class="bonusunit">Pilots of this ship will not appear in local channel lists</span></li>
+    <li><span class="bonusunit">This ship is capable of generating navigable wormholes</span></li></ul></td>
+	<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="jb2">
+		<td><img src="https://vignette.wikia.nocookie.net/eve/images/1/17/Eidolon512.jpg" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Eidolon</b></td>
+		<td style="max-width: 500px;">Jove Battleship</td>
+		<td style="max-width: 250px;width: 250px;">
+<b class="bonusheader">Jove Battleship bonuses (per skill level):</b>
+	<ul style="
+    margin-top: 8px;
+    margin-bottom: 8px;
+"><li><span class="bonusunit">200%</span> bonus to ship max velocity when using <b>Cloaking Devices</b> </li></ul>
+<b class="bonusheader">Precursor Frigate bonuses (per skill level):</b>
+    <ul style="margin-top: 8px; margin-bottom: 8px;">
+        <li><span class="bonusunit">20%</span> bonus to wormhole generation range</li></ul>
+<b class="bonusheader">Role Bonus:</b><ul style="margin-bottom: 0px;margin-top: 8px;">
+    <li><span class="bonusunit">50%</span> bonus to <b>Large Energy Turret</b> damage</li>
+    <li><span class="bonusunit">+10</span> to <b>Relic</b> and <b>Data Analyzer</b> virus strength</li>
+    <li><span class="bonusunit">100%</span> reduction to <b>Cloaking Device</b> CPU requirement</li>
+    <li><span class="bonusunit">Pilots of this ship will not appear in local channel lists</span></li>
+    <li><span class="bonusunit">This ship is capable of generating navigable wormholes</span></li></ul></td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 91 attributes.</summary>	<b>descriptionID:</b> 54????<br>	<b>typeID:</b> 49???<br>	<b>Capacity:</b> 1.0<br>	<b>Meta Level:</b> 0.0<br>	<b>isDynamicType:</b> False<br>	<b>typeNameID:</b> 541737<br>	<b>iconID:</b> 97<br>	<b>basePrice:</b> 3964874.0<br>	<b>marketGroupID:</b> 2509 (No Name)<br>	<b>Volume:</b> 50.0<br>	<b>radius:</b> 1.0<br>	<b>published:</b> True<br>	<b>Mass:</b> 0.0<br>	<b>Tech Level:</b> 1.0<br>	<b>groupID:</b> 2008<br>	<b>portionSize:</b> 1<br>	<b>Activation Cost:</b> 100.0<br>	<b>Structure Hitpoints:</b> 40.0<br>	<b>Can be fitted to:</b> 894.0<br>	<b>requiredSkill2Level:</b> 4.0<br>	<b>heatDissipationRateModifier:</b> 0.01<br>	<b>Powergrid Usage:</b> 80.0<br>	<b>Maximum Velocity Bonus:</b> -95.0<br>	<b>CPU usage:</b> 80.0<br>	<b>Banned in Empire Space:</b> 1.0<br>	<b>Secondary Skill required:</b> 11446.0<br>	<b>Heat Damage:</b> 3.0<br>	<b>Maximum velocity multiplier:</b> 0.05<br>	<b>activationBlockedStrenght:</b> 1.0<br>	<b>Activation time / duration:</b> 30000.0<br>	<b>Warp Scramble Strength:</b> 100.0<br>	<b>Mass Modifier:</b> -80.0<br></details></td>
+</tr>
+<tr class="selectable" id="warplance_light1">
+		<td><img src="https://i.imgur.com/PNGgfpz.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Light Warp Lance I</b></td>
+		<td>Drawing from advanced warp and cryotech principles, Warp Lances channel a ship’s warp core through fermion lenses into warp-sheared particle corridors to inflict massive damage on their target, with a tremendous potential increase in rate of fire through controlled overloading. 
+	<br>
+    <br>
+Each unit contains its own warp core, allowing turrets to utilize Drifter propulsion technology for movement while hanging suspended above their host’s hull, spatially locking their individual warp fields to its own.</td>
+		<td>Precursor Turret</td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 36 attributes.</summary><b>Activation Cost:</b> 4.5<br><b>Structure Hitpoints:</b> 40.0<br><b>Powergrid Usage:</b> 30.0<br><b>Capacity:</b>
+0.35<br><b>slots occupied:</b> 1.0<br><b>CPU usage:</b> 45.0<br><b>Rate of fire:</b> 3500.0<br><b>Optimal Range:</b> 6000.0<br><b>Charges Per Cycle:</b> 1.0<br><b>targetModule:</b> 0.0<br><b>Damage Modifier:</b> 1.0<br><b>Charge size:</b> 1.0<br><b>Turret Tracking:</b> 410.0<br><b>Primary Skill required:</b> 3300.0<br><b>Secondary Skill required:</b> 47870.0<br><b>raceID:</b> 135<br><b>requiredSkill1Level:</b> 1.0<br>
+<b>requiredSkill2Level:</b> 1.0<br><b>Used with (Charge Group):</b> None <br>
+<b>Tech Level:</b> 1987.0<br><b>Signature Resolution:</b> 40000.0<br><b>Meta Level:</b> 0.0<br><b>heatDissipationRateModifier:</b>1.0<br><b>Overload damage bonus:</b> 15.0<br><b>Heat Damage:</b> 5.0<br><b>Required Thermodynamics Level:</b> 1.0<br><b>metaGroupID:</b> None <br>
+<b>Can be fitted to:</b> 0.0<br><b>Color Scheme:</b> 11313.0<br><b>Reload Time:</b> 0.01<br><b>published:</b>True <br>
+<b>descriptionID:</b> 537223<br><b>graphicID:</b> 21997<br><b>groupID:</b> 1986<br><b>iconID:</b> 21923<br><b>marketGroupID:</b> 2433<br></details></td>
+</tr>
+<tr class="selectable" id="warplance_light2">
+		<td><img src="https://i.imgur.com/PNGgfpz.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Light Compact Warp Lance</b></td>
+		<td>Drawing from advanced warp and cryotech principles, Warp Lances channel a ship’s warp core through fermion lenses into warp-sheared particle corridors to inflict massive damage on their target, with a tremendous potential increase in rate of fire through controlled overloading. 
+	<br>
+    <br>
+Each unit contains its own warp core, allowing turrets to utilize Drifter propulsion technology for movement while hanging suspended above their host’s hull, spatially locking their individual warp fields to its own.</td>
+		<td>Precursor Turret</td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 36 attributes.</summary><b>Activation Cost:</b> 4.5<br><b>Structure Hitpoints:</b> 40.0<br><b>Powergrid Usage:</b> 30.0<br><b>Capacity:</b>
+0.35<br><b>slots occupied:</b> 1.0<br><b>CPU usage:</b> 45.0<br><b>Rate of fire:</b> 3500.0<br><b>Optimal Range:</b> 6000.0<br><b>Charges Per Cycle:</b> 1.0<br><b>targetModule:</b> 0.0<br><b>Damage Modifier:</b> 1.0<br><b>Charge size:</b> 1.0<br><b>Turret Tracking:</b> 410.0<br><b>Primary Skill required:</b> 3300.0<br><b>Secondary Skill required:</b> 47870.0<br><b>raceID:</b> 135<br><b>requiredSkill1Level:</b> 1.0<br>
+<b>requiredSkill2Level:</b> 1.0<br><b>Used with (Charge Group):</b> None <br>
+<b>Tech Level:</b> 1987.0<br><b>Signature Resolution:</b> 40000.0<br><b>Meta Level:</b> 0.0<br><b>heatDissipationRateModifier:</b>1.0<br><b>Overload damage bonus:</b> 15.0<br><b>Heat Damage:</b> 5.0<br><b>Required Thermodynamics Level:</b> 1.0<br><b>metaGroupID:</b> None <br>
+<b>Can be fitted to:</b> 0.0<br><b>Color Scheme:</b> 11313.0<br><b>Reload Time:</b> 0.01<br><b>published:</b>True <br>
+<b>descriptionID:</b> 537223<br><b>graphicID:</b> 21997<br><b>groupID:</b> 1986<br><b>iconID:</b> 21923<br><b>marketGroupID:</b> 2433<br></details></td>
+</tr>
+<tr class="selectable" id="warplance_light3">
+		<td><img src="https://i.imgur.com/PNGgfpz.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Light Scoped Warp Lance I</b></td>
+		<td>Drawing from advanced warp and cryotech principles, Warp Lances channel a ship’s warp core through fermion lenses into warp-sheared particle corridors to inflict massive damage on their target, with a tremendous potential increase in rate of fire through controlled overloading. 
+	<br>
+    <br>
+Each unit contains its own warp core, allowing turrets to utilize Drifter propulsion technology for movement while hanging suspended above their host’s hull, spatially locking their individual warp fields to its own.</td>
+		<td>Precursor Turret</td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 36 attributes.</summary><b>Activation Cost:</b> 4.5<br><b>Structure Hitpoints:</b> 40.0<br><b>Powergrid Usage:</b> 30.0<br><b>Capacity:</b>
+0.35<br><b>slots occupied:</b> 1.0<br><b>CPU usage:</b> 45.0<br><b>Rate of fire:</b> 3500.0<br><b>Optimal Range:</b> 6000.0<br><b>Charges Per Cycle:</b> 1.0<br><b>targetModule:</b> 0.0<br><b>Damage Modifier:</b> 1.0<br><b>Charge size:</b> 1.0<br><b>Turret Tracking:</b> 410.0<br><b>Primary Skill required:</b> 3300.0<br><b>Secondary Skill required:</b> 47870.0<br><b>raceID:</b> 135<br><b>requiredSkill1Level:</b> 1.0<br>
+<b>requiredSkill2Level:</b> 1.0<br><b>Used with (Charge Group):</b> None <br>
+<b>Tech Level:</b> 1987.0<br><b>Signature Resolution:</b> 40000.0<br><b>Meta Level:</b> 0.0<br><b>heatDissipationRateModifier:</b>1.0<br><b>Overload damage bonus:</b> 15.0<br><b>Heat Damage:</b> 5.0<br><b>Required Thermodynamics Level:</b> 1.0<br><b>metaGroupID:</b> None <br>
+<b>Can be fitted to:</b> 0.0<br><b>Color Scheme:</b> 11313.0<br><b>Reload Time:</b> 0.01<br><b>published:</b>True <br>
+<b>descriptionID:</b> 537223<br><b>graphicID:</b> 21997<br><b>groupID:</b> 1986<br><b>iconID:</b> 21923<br><b>marketGroupID:</b> 2433<br></details></td>
+</tr>
+<tr class="selectable" id="warplance_light4">
+		<td><img src="https://i.imgur.com/PNGgfpz.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Light Warp Lance II</b></td>
+		<td>Drawing from advanced warp and cryotech principles, Warp Lances channel a ship’s warp core through fermion lenses into warp-sheared particle corridors to inflict massive damage on their target, with a tremendous potential increase in rate of fire through controlled overloading. 
+	<br>
+    <br>
+Each unit contains its own warp core, allowing turrets to utilize Drifter propulsion technology for movement while hanging suspended above their host’s hull, spatially locking their individual warp fields to its own.</td>
+		<td>Precursor Turret</td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 36 attributes.</summary><b>Activation Cost:</b> 4.5<br><b>Structure Hitpoints:</b> 40.0<br><b>Powergrid Usage:</b> 30.0<br><b>Capacity:</b>
+0.35<br><b>slots occupied:</b> 1.0<br><b>CPU usage:</b> 45.0<br><b>Rate of fire:</b> 3500.0<br><b>Optimal Range:</b> 6000.0<br><b>Charges Per Cycle:</b> 1.0<br><b>targetModule:</b> 0.0<br><b>Damage Modifier:</b> 1.0<br><b>Charge size:</b> 1.0<br><b>Turret Tracking:</b> 410.0<br><b>Primary Skill required:</b> 3300.0<br><b>Secondary Skill required:</b> 47870.0<br><b>raceID:</b> 135<br><b>requiredSkill1Level:</b> 1.0<br>
+<b>requiredSkill2Level:</b> 1.0<br><b>Used with (Charge Group):</b> None <br>
+<b>Tech Level:</b> 1987.0<br><b>Signature Resolution:</b> 40000.0<br><b>Meta Level:</b> 0.0<br><b>heatDissipationRateModifier:</b>1.0<br><b>Overload damage bonus:</b> 15.0<br><b>Heat Damage:</b> 5.0<br><b>Required Thermodynamics Level:</b> 1.0<br><b>metaGroupID:</b> None <br>
+<b>Can be fitted to:</b> 0.0<br><b>Color Scheme:</b> 11313.0<br><b>Reload Time:</b> 0.01<br><b>published:</b>True <br>
+<b>descriptionID:</b> 537223<br><b>graphicID:</b> 21997<br><b>groupID:</b> 1986<br><b>iconID:</b> 21923<br><b>marketGroupID:</b> 2433<br></details></td>
+</tr> 
+<tr class="selectable" id="warplance_light5">
+		<td><img src="https://i.imgur.com/PNGgfpz.png" style="max-width:64px;max-height:64px;"></td>
+		<td>49??? - <b>Lux Kopis</b></td>
+		<td>Drawing from advanced warp and cryotech principles, Warp Lances channel a ship’s warp core through fermion lenses into warp-sheared particle corridors to inflict massive damage on their target, with a tremendous potential increase in rate of fire through controlled overloading. 
+	<br>
+    <br>
+Each unit contains its own warp core, allowing turrets to utilize Drifter propulsion technology for movement while hanging suspended above their host’s hull, spatially locking their individual warp fields to its own.</td>
+		<td>Precursor Turret</td>
+		<td><details>
+	<summary class="smallsum">Click to toggle showing the 36 attributes.</summary><b>Activation Cost:</b> 4.5<br><b>Structure Hitpoints:</b> 40.0<br><b>Powergrid Usage:</b> 30.0<br><b>Capacity:</b>
+0.35<br><b>slots occupied:</b> 1.0<br><b>CPU usage:</b> 45.0<br><b>Rate of fire:</b> 3500.0<br><b>Optimal Range:</b> 6000.0<br><b>Charges Per Cycle:</b> 1.0<br><b>targetModule:</b> 0.0<br><b>Damage Modifier:</b> 1.0<br><b>Charge size:</b> 1.0<br><b>Turret Tracking:</b> 410.0<br><b>Primary Skill required:</b> 3300.0<br><b>Secondary Skill required:</b> 47870.0<br><b>raceID:</b> 135<br><b>requiredSkill1Level:</b> 1.0<br>
+<b>requiredSkill2Level:</b> 1.0<br><b>Used with (Charge Group):</b> None <br>
+<b>Tech Level:</b> 1987.0<br><b>Signature Resolution:</b> 40000.0<br><b>Meta Level:</b> 0.0<br><b>heatDissipationRateModifier:</b>1.0<br><b>Overload damage bonus:</b> 15.0<br><b>Heat Damage:</b> 5.0<br><b>Required Thermodynamics Level:</b> 1.0<br><b>metaGroupID:</b> None <br>
+<b>Can be fitted to:</b> 0.0<br><b>Color Scheme:</b> 11313.0<br><b>Reload Time:</b> 0.01<br><b>published:</b>True <br>
+<b>descriptionID:</b> 537223<br><b>graphicID:</b> 21997<br><b>groupID:</b> 1986<br><b>iconID:</b> 21923<br><b>marketGroupID:</b> 2433<br></details></td>
+</tr> 
+</tbody></table>
+</details>
+
+<details id="blueprints">
+	<summary class="selectParent bigsum">Blueprints</summary>
+	<table>
+	  <tbody><tr>
+		<th>Blueprint Name</th>
+		<th>Old BP Data</th>
+		<th>New BP Data</th>
+		<th>Raw Diff</th>
+	  </tr>
+	<tr class="selectable" id="cid-11">
+		<td>48923 - <b>Basic 10 Blueprint</b></td>
+		<td width="280"><b>BP Price:</b> 1,000,000 ISK<br><b>Build Time:</b> 0:10:00<br>Copy:? ME:? TE:? Limit:10x<br><b>Materials:</b><br>1x Composite Accelerant<br><b>Skills:</b><br>Industry I<br><b>Outcome:</b><br>1x B10 (48605)</td>
+		<td width="280"><b>BP Price:</b> 1,000,000 ISK<br><b>Build Time:</b> 0:01:00<br>Copy:? ME:? TE:? Limit:10x<br><b>Materials:</b><br>1x Composite Accelerant<br>6x Auxiliary Parts<br>17x Force Cable<br>25x Elemental Crux<br>32x Positron Cord<br>250x Tritanium<br><b>Skills:</b><br>Industry I<br><b>Outcome:</b><br>1x B10 (48605)</td>
+		<td width="300"><span>BP Price: 1,000,000 ISK<br>Build Time: 0:</span><del style="background:#ffe6e6;">1</del><span>0</span><ins style="background:#e6ffe6;">1</ins><span>:00<br>Copy:? ME:? TE:? Limit:10x<br>Materials:<br>1x 48927<br></span><ins style="background:#e6ffe6;">6x 23159<br>17x 23160<br>25x 23161<br>32x 23158<br>250x 34<br></ins><span>Skills:<br>3380 I<br>Outcome:<br>1x 48605</span></td>
+	</tr><tr class="selectable" id="cid-12">
+		<td>48924 - <b>Standard 10 Blueprint</b></td>
+		<td width="280"><b>BP Price:</b> 1,000,000 ISK<br><b>Build Time:</b> 0:10:00<br>Copy:? ME:? TE:? Limit:10x<br><b>Materials:</b><br>2x Composite Accelerant<br><b>Skills:</b><br>Industry I<br><b>Outcome:</b><br>1x S10 (48606)</td>
+		<td width="280"><b>BP Price:</b> 1,000,000 ISK<br><b>Build Time:</b> 0:02:00<br>Copy:? ME:? TE:? Limit:10x<br><b>Materials:</b><br>2x Composite Accelerant<br>18x Auxiliary Parts<br>51x Force Cable<br>75x Elemental Crux<br>96x Positron Cord<br>750x Tritanium<br><b>Skills:</b><br>Industry I<br><b>Outcome:</b><br>1x S10 (48606)</td>
+		<td width="300"><span>BP Price: 1,000,000 ISK<br>Build Time: 0:</span><del style="background:#ffe6e6;">1</del><span>0</span><ins style="background:#e6ffe6;">2</ins><span>:00<br>Copy:? ME:? TE:? Limit:10x<br>Materials:<br>2x 48927<br></span><ins style="background:#e6ffe6;">18x 23159<br>51x 23160<br>75x 23161<br>96x 23158<br>750x 34<br></ins><span>Skills:<br>3380 I<br>Outcome:<br>1x 48606</span></td>
+	</tr><tr class="selectable" id="cid-13">
+		<td>48925 - <b>Advanced 10 Blueprint</b></td>
+		<td width="280"><b>BP Price:</b> 1,000,000 ISK<br><b>Build Time:</b> 0:10:00<br>Copy:? ME:? TE:? Limit:10x<br><b>Materials:</b><br>3x Composite Accelerant<br><b>Skills:</b><br>Industry I<br><b>Outcome:</b><br>1x A10 (48607)</td>
+		<td width="280"><b>BP Price:</b> 1,000,000 ISK<br><b>Build Time:</b> 0:03:00<br>Copy:? ME:? TE:? Limit:10x<br><b>Materials:</b><br>3x Composite Accelerant<br>24x Auxiliary Parts<br>68x Force Cable<br>100x Elemental Crux<br>128x Positron Cord<br>1000x Tritanium<br><b>Skills:</b><br>Industry I<br><b>Outcome:</b><br>1x A10 (48607)</td>
+		<td width="300"><span>BP Price: 1,000,000 ISK<br>Build Time: 0:</span><del style="background:#ffe6e6;">1</del><span>0</span><ins style="background:#e6ffe6;">3</ins><span>:00<br>Copy:? ME:? TE:? Limit:10x<br>Materials:<br>3x 48927<br></span><ins style="background:#e6ffe6;">24x 23159<br>68x 23160<br>100x 23161<br>128x 23158<br>1000x 34<br></ins><span>Skills:<br>3380 I<br>Outcome:<br>1x 48607</span></td>
+	</tr><tr class="selectable" id="cid-14">
+		<td>48926 - <b>Extended 10 Blueprint</b></td>
+		<td width="280"><b>BP Price:</b> 1,000,000 ISK<br><b>Build Time:</b> 0:10:00<br>Copy:? ME:? TE:? Limit:10x<br><b>Materials:</b><br>6x Composite Accelerant<br><b>Skills:</b><br>Industry I<br><b>Outcome:</b><br>1x E10 (48608)</td>
+		<td width="280"><b>BP Price:</b> 1,000,000 ISK<br><b>Build Time:</b> 0:10:00<br>Copy:? ME:? TE:? Limit:10x<br><b>Materials:</b><br>6x Composite Accelerant<br>42x Auxiliary Parts<br>119x Force Cable<br>175x Elemental Crux<br>224x Positron Cord<br>1750x Tritanium<br><b>Skills:</b><br>Industry I<br><b>Outcome:</b><br>1x E10 (48608)</td>
+		<td width="300"><span>BP Price: 1,000,000 ISK<br>Build Time: 0:10:00<br>Copy:? ME:? TE:? Limit:10x<br>Materials:<br>6x 48927<br></span><ins style="background:#e6ffe6;">42x 23159<br>119x 23160<br>175x 23161<br>224x 23158<br>1750x 34<br></ins><span>Skills:<br>3380 I<br>Outcome:<br>1x 48608</span></td>
+	</tr><tr class="selectable" id="cid-15">
+		<td>49100 - <b>Zero-Point Mass Entangler Blueprint</b></td>
+		<td width="280">No blueprint entry found.</td>
+		<td width="280"><b>BP Price:</b> 50,000,000 ISK<br><b>Build Time:</b> 1:00:00<br>Copy:2880 ME:1260 TE:1260 Limit:50x<br><b>Materials:</b><br>40x Megacyte<br>55x Zero-Point Condensate<br>204x Zydrine<br>2824x Nocxium<br>9360x Isogen<br>17147x Mexallon<br>36064x Pyerite<br>66156x Tritanium<br><b>Skills:</b><br>Industry I<br><b>Outcome:</b><br>1x Zero-Point Mass Entangler (49099)</td>
+		<td width="300"><ins style="background:#e6ffe6;">BP Price: 50,000,000 ISK<br>Build Time: 1:00:00<br>Copy:2880 ME:1260 TE:1260 Limit:50x<br>Materials:<br>40x 40<br>55x 48112<br>204x 39<br>2824x 38<br>9360x 37<br>17147x 36<br>36064x 35<br>66156x 34<br>Skills:<br>3380 I<br>Outcome:<br>1x 49099</ins></td>
+	</tr>
+	</tbody></table>
+</details>
+
+<details id="changedreprocessing">
+	<summary class="selectParent bigsum">Reprocessing</summary>
+	<table>
+	  <tbody><tr>
+		<th>TypeID, Name, and Group</th>
+		<th>Old Reprocessing Data</th>
+		<th>New Reprocessing Data</th>
+		<th>Raw Diff</th>
+	  </tr>
+	<tr class="selectable" id="cid-16">
+		<td>48916 - <b>Asteroid A</b> (Limited Asteroids)</td>
+		<td width="280">No reprocessing data found.</td>
+		<td width="280">4x Composite Accelerant</td>
+		<td width="300"><ins style="background:#e6ffe6;">4x 48927</ins></td>
+	</tr><tr class="selectable" id="cid-17">
+		<td>48917 - <b>Asteroid B</b> (Limited Asteroids)</td>
+		<td width="280">No reprocessing data found.</td>
+		<td width="280">4x Composite Accelerant</td>
+		<td width="300"><ins style="background:#e6ffe6;">4x 48927</ins></td>
+	</tr><tr class="selectable" id="cid-18">
+		<td>48918 - <b>Asteroid C</b> (Limited Asteroids)</td>
+		<td width="280">No reprocessing data found.</td>
+		<td width="280">4x Composite Accelerant</td>
+		<td width="300"><ins style="background:#e6ffe6;">4x 48927</ins></td>
+	</tr><tr class="selectable" id="cid-19">
+		<td>48919 - <b>Asteroid D</b> (Limited Asteroids)</td>
+		<td width="280">No reprocessing data found.</td>
+		<td width="280">4x Composite Accelerant</td>
+		<td width="300"><ins style="background:#e6ffe6;">4x 48927</ins></td>
+	</tr><tr class="selectable" id="cid-20">
+		<td>49099 - <b>Zero-Point Mass Entangler</b> (Mass Entanglers)</td>
+		<td width="280">No reprocessing data found.</td>
+		<td width="280">66156x Tritanium<br>36064x Pyerite<br>17147x Mexallon<br>9360x Isogen<br>2824x Nocxium<br>204x Zydrine<br>40x Megacyte</td>
+		<td width="300"><ins style="background:#e6ffe6;">66156x 34<br>36064x 35<br>17147x 36<br>9360x 37<br>2824x 38<br>204x 39<br>40x 40</ins></td>
+	</tr>
+	</tbody></table>
+</details>
+ </h1></body></html>
